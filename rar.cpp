@@ -1,8 +1,10 @@
+#include "rar.hpp"
+
 void* readFile(char* gname,size_t& size)
 {
 	FILE* f;
 	unsigned char* data;
-	f = fopen(gname,"wb");
+        f = fopen(gname,"rb+");
 	fseek(f,0,SEEK_END);
 	size = ftell(f);
 	rewind(f);
